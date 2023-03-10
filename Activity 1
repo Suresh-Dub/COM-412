@@ -1,0 +1,95 @@
+Activity 1: To design the ER model of a university database and implement primary and foreign keys, integrity rules and relationships.
+Before we begin, let's review some basic concepts:
+
+Entity: An object or concept that is represented in the database.
+Attribute: A characteristic or property of an entity.
+Relationship: A connection or association between two or more entities.
+Now, let's start by identifying some of the entities that might be included in a university database:
+
+Student
+Course
+Instructor
+Department
+Classroom
+Enrollment
+For each entity, we need to identify its attributes. Here are some suggestions:
+
+Student:
+
+ID (primary key)
+Name
+Address
+Email
+Phone
+Major
+Course:
+
+ID (primary key)
+Name
+Credits
+Department ID (foreign key)
+Instructor ID (foreign key)
+Instructor:
+
+ID (primary key)
+Name
+Email
+Phone
+Department ID (foreign key)
+Department:
+
+ID (primary key)
+Name
+Office
+Phone
+Classroom:
+
+ID (primary key)
+Building
+Room Number
+Capacity
+Enrollment:
+
+ID (primary key)
+Student ID (foreign key)
+Course ID (foreign key)
+Semester
+Grade
+Now that we have identified the entities and their attributes, we can start to define relationships between them. Here are some suggestions:
+
+A student can enroll in many courses, and a course can have many students. This is a many-to-many relationship, which requires a linking table. We will call this table Enrollment and it will have foreign keys for both the Student and Course entities.
+A course can have only one instructor, but an instructor can teach many courses. This is a one-to-many relationship, which requires a foreign key in the Course entity.
+An instructor can be associated with only one department, but a department can have many instructors. This is a one-to-many relationship, which requires a foreign key in the Instructor entity.
+A course is associated with only one department, but a department can have many courses. This is a one-to-many relationship, which requires a foreign key in the Course entity.
+To implement primary and foreign keys, we need to designate one attribute in each entity as its primary key. In addition, any attribute that serves as a foreign key must have a corresponding primary key in the entity it is referencing. Here are the primary and foreign keys for our entities:
+
+Student:
+
+ID (primary key)
+Course:
+
+ID (primary key)
+Department ID (foreign key)
+Instructor ID (foreign key)
+Instructor:
+
+ID (primary key)
+Department ID (foreign key)
+Department:
+
+ID (primary key)
+Classroom:
+
+ID (primary key)
+Enrollment:
+
+ID (primary key)
+Student ID (foreign key)
+Course ID (foreign key)
+Finally, we need to define some integrity rules to ensure that our data is consistent and accurate. Here are some suggestions:
+
+Each entity's primary key must be unique.
+Each foreign key must reference a valid primary key in the referenced entity.
+A student cannot enroll in the same course more than once.
+An instructor cannot be assigned to teach a course that is outside of their department.
+And that's it! We have designed an ER model for a university database, implemented primary and foreign keys, defined integrity rules, and identified relationships between the entities.
